@@ -2,6 +2,7 @@
 	drop table if exists cajeros;
 	drop table if exists productos;
 	drop table if exists maquinas_registradoras;
+	drop table if exists usuario;
 	
 	create table productos(
 	id int auto_increment primary key,
@@ -31,6 +32,14 @@
 	foreign key (cajero) references cajeros(id)
 	on update cascade on delete cascade
 	);
+	
+	create table usuario (
+	id int primary key auto_increment,
+	username varchar (300),
+	password varchar (300),
+	role varchar (300)
+);
+	
 	
 	insert into productos (nombre, precio) values
 	('Producto A', 10),
